@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+
+
+
+void init(int** arr, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; ++j)
+		{
+			arr[i][j] = i;
+
+		}
+
+	}
+}
+
+
+
+
+
+void swap(int** arr, int size)
+{
+	for (int i = 0; i < size + 1; ++i)
+	{
+		for (int j = 0; j < size + 1; ++j)
+		{
+			int temp;
+			temp = arr[0][i];
+			arr[0][i] = arr[2][i];
+			arr[2][i] = temp;
+		
+		}
+
+		
+	}
+}
+
+void print(int** arr, int size)
+{
+	for (int i = 0; i < size; ++i)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			cout << arr[i][j];
+		}
+		cout << endl;
+	}
+}
+
+
+int main()
+{
+	int size;
+	cin >> size;
+	int** arr = new int* [size];
+
+	for (int i = 0; i < size; ++i)
+	{
+		arr[i] = new int[size];
+	}
+
+
+	init(arr, size);
+	swap(arr, size);
+	print(arr, size);
+}
