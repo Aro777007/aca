@@ -60,9 +60,12 @@ int main()
 	{
 		arr[i] = new int[size];
 	}
+	
 
 
 	init(arr, size);
 	swap(arr, size);
 	print(arr, size);
+	
+	delete[] arr;
 }
