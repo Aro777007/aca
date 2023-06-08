@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+class matrix
+{
+public:
+    
+    matrix() {};
+
+    matrix(int** array, int size)
+    {
+        for (int i = 0; i < size; ++i)
+        {
+            for (int j = 0; j < size; ++j)
+            {
+                array[i][j] = i;
+            }
+        }
+    }
+
+    ~matrix() {};
+
+   
+    void swap(int** array,int size)
+    {
+        for (int i = 0; i < size; ++i)
+        {
+            int* temp = new int(1);
+            *temp = array[0][i];
+            array[0][i] = array[2][i];
+            array[2][i] = *temp;
+        }
+    }
+
+    void print(int** array,int size)
+    {
+        for (int i = 0; i < size; ++i)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                cout << array[i][j];
+            }
+            cout << endl;
+        }
+    }
+
+    
+};
+
+
+
+int main()
+{
+    
+    int size;
+    cin >> size;
+    int** array = new int* [size];
+    for (int i = 0; i < size; ++i)
+    {
+        array[i] = new int[size];
+    }
+    
+    matrix obj;
+    matrix matrixobj1(array,size);
+    obj.swap(array,size);
+    obj.print(array,size);
+}
