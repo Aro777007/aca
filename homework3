@@ -5,8 +5,8 @@ using namespace std;
 class human
 {
 public:
-    human()
-    {
+    void f()
+       {
 
         int salary;
         int cards_money;
@@ -37,5 +37,8 @@ public:
 
 int main()
 {
-    human h;
+
+    human obj;
+    obj.f();
+    
 }
