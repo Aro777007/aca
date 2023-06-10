@@ -5,17 +5,17 @@ using namespace std;
 class human
 {
 public:
-    
+
     int salary;
     int cards_money;
     int cars;
     int houses;
     int real_estate;
 
-   
-    void f()
+    
+    
+    human()
     {
-
 
         cout << "input your salary, in($)" << endl;
         cin >> salary;
@@ -29,19 +29,21 @@ public:
         cin >> real_estate;
 
 
+
         cout << "salary---" << salary << endl;
         cout << "cards money---" << cards_money << endl;
         cout << "cars---" << cars << endl;
         cout << "houses---" << houses << endl;
         cout << "real_estate---" << real_estate << endl;
-
     }
+
+    
 };
 
 int main()
 {
-    
-    human obj;
-    obj.f();
-    
+   human obj();
+   human h;
 }
+
+
