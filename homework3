@@ -5,14 +5,17 @@ using namespace std;
 class human
 {
 public:
-    void f()
-       {
+    
+    int salary;
+    int cards_money;
+    int cars;
+    int houses;
+    int real_estate;
 
-        int salary;
-        int cards_money;
-        int cars;
-        int houses;
-        int real_estate;
+   
+    void f()
+    {
+
 
         cout << "input your salary, in($)" << endl;
         cin >> salary;
@@ -37,7 +40,7 @@ public:
 
 int main()
 {
-
+    
     human obj;
     obj.f();
     
