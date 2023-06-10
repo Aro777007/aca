@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+
+class human
+{
+public:
+    human()
+    {
+
+        int salary;
+        int cards_money;
+        int cars;
+        int houses;
+        int real_estate;
+
+        cout << "input your salary, in($)" << endl;
+        cin >> salary;
+        cout << "input your bank cards money, in($)" << endl;
+        cin >> cards_money;
+        cout << "input your number of cars" << endl;
+        cin >> cars;
+        cout << "input your number of houses" << endl;
+        cin >> houses;
+        cout << "how many real estates you have?" << endl;
+        cin >> real_estate;
+
+
+        cout << "salary---" << salary << endl;
+        cout << "cards money---" << cards_money << endl;
+        cout << "cars---" << cars << endl;
+        cout << "houses---" << houses << endl;
+        cout << "real_estate---" << real_estate << endl;
+
+    }
+};
+
+int main()
+{
+    human h;
+}
