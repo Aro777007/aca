@@ -1,0 +1,83 @@
+#include <iostream>
+using namespace std;
+
+class matrix
+{
+public:
+
+    int n;
+    int m;
+    int** arr;
+
+    matrix() {};
+
+    matrix(const matrix& obj)
+    {
+        int** arr = new int* [n];
+    }
+
+    matrix& operator =(const matrix& obj)
+    {
+        for (int i = 0; i < m; ++i)
+        {
+            this->arr[i] = new int[m];
+        }
+    }
+
+    void init(int** array, int n, int m)
+    {
+        for (int i = 0; i < n; ++i)
+        {
+            for (int j = 0; j < m; ++j)
+            {
+                array[i][j] = i;
+            }
+        }
+    }
+
+    void swap(int** array, int n, int m)
+    {
+        for (int i = 0; i < n, i < m; ++i)
+        {
+            int* temp = new int(1);
+            *temp = array[0][i];
+            array[0][i] = array[2][i];
+            array[2][i] = *temp;
+
+        }
+    }
+
+    void print(int** array, int n, int m)
+    {
+        for (int i = 0; i < n; ++i)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                cout << array[i][j];
+            }
+            cout << endl;
+        }
+    }
+
+    ~matrix() {};
+};
+
+
+int main()
+{
+    int n;
+    cin >> n;
+    int m;
+    cin >> m;
+    int** arr = new int* [n];
+    for (int i = 0; i < m; ++i)
+    {
+        arr[i] = new int[m];
+    }
+
+    matrix obj;
+
+    obj.init(arr, n, m);
+    obj.swap(arr, n, m);
+    obj.print(arr, n, m);
+}
