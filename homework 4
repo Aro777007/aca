@@ -5,9 +5,9 @@ class matrix
 {
 public:
 
-    int n;
-    int m;
-    int** arr;
+    int n = 0;
+    int m = 0;
+    int** arr = nullptr;
 
     matrix() {};
 
@@ -18,9 +18,12 @@ public:
 
     matrix& operator =(const matrix& obj)
     {
-        for (int i = 0; i < m; ++i)
+        if (this != &obj)
         {
-            this->arr[i] = new int[m];
+            for (int i = 0; i < m; ++i)
+            {
+                this->arr[i] = new int[m];
+            }
         }
     }
 
@@ -37,13 +40,15 @@ public:
 
     void swap(int** array, int n, int m)
     {
-        for (int i = 0; i < n, i < m; ++i)
+        for (int i = 0; i < n; ++i)
         {
-            int* temp = new int(1);
-            *temp = array[0][i];
-            array[0][i] = array[2][i];
-            array[2][i] = *temp;
-
+            for (; i < m; ++i);
+            {
+                int* temp = new int(1);
+                *temp = array[0][i];
+                array[0][i] = array[2][i];
+                array[2][i] = *temp;
+            }
         }
     }
 
@@ -59,7 +64,7 @@ public:
         }
     }
 
-    ~matrix() {};
+
 };
 
 
@@ -76,7 +81,7 @@ int main()
     }
 
     matrix obj;
-
+    matrix matrixobj1(obj);
     obj.init(arr, n, m);
     obj.swap(arr, n, m);
     obj.print(arr, n, m);
