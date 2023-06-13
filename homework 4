@@ -5,16 +5,22 @@ class matrix
 {
 public:
 
+    matrix() {};
+
     int n = 0;
     int m = 0;
-    int** arr = nullptr;
-
-    matrix() {};
+    int** array = nullptr;
 
     matrix(const matrix& obj)
     {
-        int** arr = new int* [n];
+        int** array = new int* [n];
+
+        for (int i = 0; i < n; i++)
+        {
+            *array[i] = *obj.array[i];
+        }
     }
+
 
     matrix& operator =(const matrix& obj)
     {
@@ -22,10 +28,11 @@ public:
         {
             for (int i = 0; i < m; ++i)
             {
-                this->arr[i] = new int[m];
+                this->array[i] = new int[m];
             }
         }
     }
+    
 
     void init(int** array, int n, int m)
     {
@@ -38,11 +45,15 @@ public:
         }
     }
 
+    ~matrix() {};
+
+
     void swap(int** array, int n, int m)
     {
-        for (int i = 0; i < n; ++i)
+        int i = 0;
+        for (; i < n; ++i)
         {
-            for (; i < m; ++i);
+            for (; i < m; ++i)
             {
                 int* temp = new int(1);
                 *temp = array[0][i];
@@ -68,21 +79,23 @@ public:
 };
 
 
+
 int main()
 {
+
     int n;
-    cin >> n;
     int m;
+    cin >> n;
     cin >> m;
-    int** arr = new int* [n];
+    int** array = new int* [n];
     for (int i = 0; i < m; ++i)
     {
-        arr[i] = new int[m];
+        array[i] = new int[m];
     }
 
     matrix obj;
     matrix matrixobj1(obj);
-    obj.init(arr, n, m);
-    obj.swap(arr, n, m);
-    obj.print(arr, n, m);
+    obj.init(array, n,m);
+    obj.swap(array, n,m);
+    obj.print(array, n,m);
 }
