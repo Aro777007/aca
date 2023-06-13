@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+#include <string>
+
+class person
+{
+public:
+
+	int age;
+	string name;
+	string surname;
+	string ratings;
+	string parents_name;
+	int exam_ratings;
+
+
+	void set_values()
+	{
+		cout << "age" << endl;
+		cin >> age;
+		cout << "name" << endl;
+		cin >> name;
+		cout << "surname" << endl;
+		cin >> surname;
+		cout << "ratings" << endl;
+		cin >> ratings;
+		cout << "parents name" << endl;
+		cin >> parents_name;
+		cout << "exam ratings" << endl;
+		cin >> exam_ratings;
+
+	}
+
+	void print_the_answers()
+	{
+		cout << age << endl;
+		cout << name << endl;
+		cout << surname << endl;
+		cout << ratings << endl;
+		cout << parents_name << endl;
+		cout << exam_ratings << endl;
+	}
+
+};
+
+int main()
+{
+	person obj;
+	person personobj1();
+	obj.set_values();
+	obj.print_the_answers();
+}
