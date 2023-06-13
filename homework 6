@@ -1,0 +1,32 @@
+
+#include <iostream>
+using namespace std;
+#include <string>
+
+class Car
+{
+    int speed = 200;
+    string size="blue";
+    int weight = 2;
+    int power = 450;
+    int colour;
+    bool is_jeep;
+};
+
+
+class Parking
+{
+    Car* car;
+    void setCar(Car* _car)
+    {
+        car = _car;
+        bool is_jeep = true;
+        bool free_place = false;
+    }
+};
+
+int main()
+{
+    Car obj();
+  
+}
