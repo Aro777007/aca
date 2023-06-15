@@ -1,0 +1,170 @@
+#include <iostream>
+using namespace std;
+#include <string>
+
+class animal
+{
+public:
+	bool is_mammal=1;
+	bool is_wild=1;
+	string breed;
+	int mid_weight=0;
+	int mid_height=0;
+	int speed=0;
+};
+
+class aerial : public animal
+{
+public:
+	bool is_flying = 1;
+	bool is_swim = 0;
+};
+
+
+
+class aquatic : public animal
+{
+public:
+	bool is_swim = 1;
+	bool is_flying = 0;
+	bool have_a_fin = 1;
+};
+
+
+
+class land : public animal
+{
+public:
+	bool is_walk = 1;
+	string colour;
+	int legs = 4;
+};
+ 
+
+
+class eagle : public aerial
+{
+public:
+	void size()
+	{
+		mid_weight = 4,5;
+		mid_height = 1;
+		is_mammal = 0;
+		is_wild = 1;
+
+		cout << "eagle is aerial animal, middle height--" << mid_height << "middle weight--" << mid_weight << endl;
+		cout << "they are not mammal, they are wild;" << endl;
+	}
+};
+
+
+
+class hawk : public aerial
+{
+public:
+	void size1()
+	{
+		mid_weight = 1;
+		mid_height = 55;
+		is_mammal = 0;
+		is_wild = 1;
+
+		cout << "hawk is aerial animal, middle height--" << mid_height << "middle weight--" << mid_weight << endl;
+		cout << "they are not mammal, they are wild;" << endl;
+	}
+};
+
+
+
+class shark : public aquatic
+{
+public:
+	void size2()
+	{
+		mid_weight = 1200;
+		mid_height = 2;
+	    is_wild = 1;
+		speed = 19;
+
+		cout << "shark is aquatic animal, middle height--" << mid_height << "middle weight--" << mid_weight << endl;
+		cout << " they are wild;" << "their middle speed - " << speed << endl;
+	}
+};
+
+
+
+class whale : public aquatic
+{
+public:
+	void size3()
+	{
+		mid_weight = 190000;
+		mid_height = 5;
+		is_mammal = 1;
+		speed = 47;
+
+		cout << "whale is aquatic animal, middle height--" << mid_height << "middle weight--" << mid_weight << endl;
+		cout << " they are mammal;" << "their middle speed - " << speed << endl;
+	}
+};
+
+
+
+class lion : public land
+{
+public:
+	void size4()
+	{
+		mid_weight = 200;
+		mid_height = 100;
+		speed = 80;
+		is_mammal = 1;
+
+		cout << "Lion is land animal, middle height--" << mid_height << "middle weight--" << mid_weight << endl;
+		cout << " they are wild;" << "their middle speed - " << speed << endl;
+	}
+
+};
+
+
+
+class tiger : public land
+{
+public:
+	void size5()
+	{
+		mid_weight = 150;
+		mid_height = 90;
+		speed = 55;
+		is_mammal = 1;
+
+		cout << "tiger is land animal, middle height --" << mid_height << "middle weight --" << mid_weight << endl;
+		cout << " they are mammal;" << "their middle speed - " << speed << endl;
+	}
+};
+
+
+int main()
+{
+	eagle eagle;
+	eagle.size();
+
+	hawk hawk;
+	hawk.size1();
+
+	shark shark;
+	shark.size2();
+
+	whale whale;
+	whale.size3();
+
+	lion lion;
+	lion.size4();
+
+	tiger tiger;
+	tiger.size5();
+
+
+
+}
+
