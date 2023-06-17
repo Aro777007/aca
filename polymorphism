@@ -11,6 +11,19 @@ public:
 		cout << "i am a anmial" << endl;
 	}
 
+	animal(){}
+	
+	animal(int y)
+	{
+		int a = 0;
+		cout << "constuctor" << endl;
+	}
+
+    animal(const animal & obj)
+	{
+		cout << "copy constructor" << endl;
+	}
+
 
 
 	bool is_mammal = 1;
@@ -26,7 +39,6 @@ class aerial : public animal
 public:
 	bool is_flying = 1;
 	bool is_swim = 0;
-
 
 	
 };
@@ -193,10 +205,13 @@ public:
 
 int main()
 {
+	animal obj(3);
+	animal animalobj1(obj);
+	animal a;
 
-
-
-	animal* obj1 = new animal;
+	
+ 
+    animal* obj1 = new animal;
 	eagle* obj2 = new eagle;
 	hawk* obj3 = new hawk;
 	shark* obj4 = new shark;
@@ -237,3 +252,5 @@ int main()
 	return 0;
 
 }
+
+
