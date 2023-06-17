@@ -11,15 +11,15 @@ public:
 		cout << "i am a anmial" << endl;
 	}
 
-	animal(){}
-	
+	animal() {}
+
 	animal(int y)
 	{
 		int a = 0;
 		cout << "constuctor" << endl;
 	}
 
-    animal(const animal & obj)
+	animal(const animal& obj)
 	{
 		cout << "copy constructor" << endl;
 	}
@@ -40,7 +40,7 @@ public:
 	bool is_flying = 1;
 	bool is_swim = 0;
 
-	
+
 };
 
 
@@ -69,7 +69,7 @@ class eagle : public aerial
 {
 public:
 
-    void voice()
+	void voice()
 	{
 		cout << "i am a eagle" << endl;
 	}
@@ -92,7 +92,7 @@ class hawk : public aerial
 {
 public:
 
-    void voice()
+	void voice()
 	{
 		cout << "i am a hawk" << endl;
 	}
@@ -115,7 +115,7 @@ class shark : public aquatic
 {
 public:
 
-     void voice()
+	void voice()
 	{
 		cout << "i am a shark" << endl;
 	}
@@ -138,7 +138,7 @@ class whale : public aquatic
 {
 public:
 
-	 void voice()
+	void voice()
 	{
 		cout << "i am a whale" << endl;
 	}
@@ -209,15 +209,14 @@ int main()
 	animal animalobj1(obj);
 	animal a;
 
-	
- 
-    animal* obj1 = new animal;
-	eagle* obj2 = new eagle;
-	hawk* obj3 = new hawk;
-	shark* obj4 = new shark;
-	whale* obj5 = new whale;
-	lion* obj6 = new lion;
-	tiger* obj7 = new tiger;
+
+	animal* obj1 = new lion;
+	animal* obj2 = new tiger;
+	animal* obj3 = new eagle;
+	animal* obj4 = new hawk;
+	animal* obj5 = new shark;
+	animal* obj6 = new whale;
+
 
 	obj1->voice();
 	obj2->voice();
@@ -225,7 +224,6 @@ int main()
 	obj4->voice();
 	obj5->voice();
 	obj6->voice();
-	obj7->voice();
 
 
 
@@ -247,10 +245,9 @@ int main()
 	tiger tiger;
 	tiger.size5();
 
-	
-	
+
+
 	return 0;
 
 }
-
 
