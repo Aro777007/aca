@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 #include <string>
@@ -30,7 +31,7 @@ public:
 		cout << "copy constructor" << endl;
 	}
 
-	virtual ~animal() {} 
+	virtual ~animal() {}
 
 	bool is_mammal = 1;
 	bool is_wild = 1;
@@ -80,7 +81,7 @@ public:
 		cout << "i am flying" << endl;
 	}
 
-	void voice()
+	void voice() override
 	{
 		cout << "i am a eagle" << endl;
 	}
@@ -108,7 +109,7 @@ public:
 		cout << "i am flying" << endl;
 	}
 
-	void voice()
+	void voice() override
 	{
 		cout << "i am a hawk" << endl;
 	}
@@ -137,7 +138,7 @@ public:
 	}
 
 
-	void voice()
+	void voice() override
 	{
 		cout << "i am a shark" << endl;
 	}
@@ -166,7 +167,7 @@ public:
 	}
 
 
-	void voice()
+	void voice() override
 	{
 		cout << "i am a whale" << endl;
 	}
@@ -195,7 +196,7 @@ public:
 		cout << "i am running" << endl;
 	}
 
-	void voice()
+	void voice() override
 	{
 		cout << "i am a lion" << endl;
 	}
@@ -226,7 +227,7 @@ public:
 	}
 
 
-	void voice()
+	void voice() final
 	{
 		cout << "i am a tiger" << endl;
 	}
