@@ -1,0 +1,174 @@
+
+#include <iostream>
+using namespace std;
+#include <string>
+
+
+class figure
+{
+public:
+	virtual void move()
+	{
+	    
+	}
+	string colour;
+	string name;
+	
+};
+
+class soldier : public figure
+{
+public:
+	void f()
+	{
+		colour = "black";
+		name = "soldier";
+
+		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
+	}
+
+	void move() override
+	{
+		cout << "soldiers step" << endl;
+	}
+
+};
+
+class king : public figure
+{
+public:
+	void f1()
+	{
+		name = "king";
+		colour = " black";
+
+		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
+
+	}
+
+	void move() override
+	{
+		cout << "kings step" << endl;
+	}
+};
+
+class elephant : public figure
+{
+public:
+	void f2()
+	{
+		name = "elephant";
+		colour = "black";
+
+		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
+
+	}
+
+	void move() override
+	{
+		cout << "elephants step" << endl;
+	}
+};
+
+class boat : public figure
+{
+public:
+	void f3()
+	{
+		name = "boat";
+		colour = "black";
+
+		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
+
+	}
+
+	void move() override
+	{
+		cout << "boats step" << endl;
+	}
+};
+
+class quenn : public figure
+{
+public:
+	void f4()
+	{
+		name = "quenn";
+		colour = "black";
+
+		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
+
+	}
+
+	void move() override
+	{
+		cout << "quenns step" << endl;
+	}
+};
+
+
+class horse : public figure
+{
+public:
+	void move() final
+	{
+		cout << "horses step" << endl;
+	}
+
+	void f5()
+	{
+		name = "horse";
+		colour = "black";
+
+		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
+	}
+
+	
+};
+
+
+int main()
+{
+	figure obj();
+	figure f;
+	
+
+	figure* obj1 = new soldier;
+	figure* obj2 = new elephant;
+	figure* obj3 = new king;
+	figure* obj4 = new quenn;
+	figure* obj5 = new boat;
+	figure* obj6 = new horse;
+
+	obj1->move();
+	obj2->move();
+	obj3->move();
+	obj4->move();
+	obj5->move();
+	obj6->move();
+
+
+	soldier soldier;
+	soldier.f();
+
+	king king;
+	king.f1();
+
+	elephant elephant;
+	elephant.f2();
+
+	quenn quenn;
+	quenn.f4();
+
+	boat boat;
+	boat.f3();
+
+	horse horse;
+	horse.f5();
+
+
+
+	return 0;
+
+
+}
