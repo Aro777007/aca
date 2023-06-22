@@ -1,0 +1,116 @@
+#include <iostream>
+using namespace std;
+
+class car
+{
+public:
+	virtual void type() = 0;
+	virtual void seria() = 0;
+	virtual void realase_date() = 0;
+	virtual void engine() = 0;
+};
+
+class Mercedes : public car
+{
+public:
+	void type()
+	{
+		cout << "MERCEDES" << endl;
+	}
+
+	void seria()
+	{
+		cout << "s-class w223" << endl;
+	}
+
+	void realase_date()
+	{
+		cout << "2020 date" << endl;
+	}
+
+	void engine()
+	{
+		cout << "4.0 liter" << endl;
+	}
+};
+
+
+class BMW : public car
+{
+public:
+	void type()
+	{
+		cout << "BMW" << endl;
+	}
+
+	void seria()
+	{
+		cout << "M8" << endl;
+	}
+
+	void realase_date()
+	{
+		cout << "2022 date" << endl;
+	}
+
+	void engine()
+	{
+		cout << "4.4 liter" << endl;
+	}
+};
+
+class Toyota : public car
+{
+public:
+	void type()
+	{
+		cout << "Toyota" << endl;
+	}
+
+	void seria()
+	{
+		cout << "Land cruiser 300" << endl;
+	}
+
+	void realase_date()
+	{
+		cout << "2023 date" << endl;
+	}
+
+	void engine()
+	{
+		cout << " 3.3 liter" << endl;
+	}
+};
+
+int main()
+{
+	Mercedes m;
+	m.type();
+	m.seria();
+	m.realase_date();
+	m.engine();
+	
+
+	cout << endl;
+	cout << endl;
+	cout << endl;
+
+	BMW b;
+	b.type();
+	b.seria();
+	b.realase_date();
+	b.engine();
+	
+
+	cout << endl;
+	cout << endl;
+	cout << endl;
+
+	Toyota t;
+	t.type();
+	t.seria();
+	t.realase_date();
+	t.engine();
+	
+}
