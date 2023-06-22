@@ -7,107 +7,121 @@ using namespace std;
 class figure
 {
 public:
-	virtual void move()
-	{
+    virtual void move()
+    {
 
-	}
-	string colour;
-	string name;
+    }
+    string colour;
+    string name;
 
 };
 
 class soldier : public figure
 {
 public:
-	soldier(string name,string colour)
-	{
-		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
-	}
+    soldier()
+    {
+        colour = "black";
+        name = "soldier";
 
-	void move() override
-	{
-		cout << "soldiers step" << endl;
-	}
+        cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
+    }
+
+    void move() override
+    {
+        cout << "soldiers step" << endl;
+    }
 
 };
 
 class king : public figure
 {
 public:
-	king(string name,string colour)
-	{
-		
-		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
+    king()
+    {
+        name = "king";
+        colour = " black";
 
-	}
+        cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
 
-	void move() override
-	{
-		cout << "kings step" << endl;
-	}
+    }
+
+    void move() override
+    {
+        cout << "kings step" << endl;
+    }
 };
 
 class elephant : public figure
 {
 public:
-	elephant(string name,string colour)
-	{
-		
-		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
+    elephant()
+    {
+        name = "elephant";
+        colour = "black";
 
-	}
+        cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
 
-	void move() override
-	{
-		cout << "elephants step" << endl;
-	}
+    }
+
+    void move() override
+    {
+        cout << "elephants step" << endl;
+    }
 };
 
 class boat : public figure
 {
 public:
-	boat(string name,string colour)
-	{
-		
-		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
+    boat()
+    {
+        name = "boat";
+        colour = "black";
 
-	}
+        cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
 
-	void move() override
-	{
-		cout << "boats step" << endl;
-	}
+    }
+
+    void move() override
+    {
+        cout << "boats step" << endl;
+    }
 };
 
 class quenn : public figure
 {
 public:
-	quenn(string name,string colour)
-	{
-		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
+    quenn()
+    {
+        name = "quenn";
+        colour = "black";
 
-	}
+        cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
 
-	void move() override
-	{
-		cout << "quenns step" << endl;
-	}
+    }
+
+    void move() override
+    {
+        cout << "quenns step" << endl;
+    }
 };
 
 
 class horse : public figure
 {
 public:
-	void move() final
-	{
-		cout << "horses step" << endl;
-	}
+    void move() final
+    {
+        cout << "horses step" << endl;
+    }
 
-	horse(string name,string colour)
-	{
-		
-		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
-	}
+    horse()
+    {
+        name = "horse";
+        colour = "black";
+
+        cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
+    }
 
 
 };
@@ -115,25 +129,24 @@ public:
 
 int main()
 {
-	figure obj();
-	figure f;
+    
 
-	figure* obj1 = new soldier("soldier","black");
-	figure* obj2 = new elephant("elephant", "black");
-	figure* obj3 = new king("king", "black");
-	figure* obj4 = new quenn("quenn", "black");
-	figure* obj5 = new boat("boat", "black");
-	figure* obj6 = new horse("horse", "black");
+    figure* obj1 = new soldier;
+    figure* obj2 = new elephant;
+    figure* obj3 = new king;
+    figure* obj4 = new quenn;
+    figure* obj5 = new boat;
+    figure* obj6 = new horse;
+
+    obj1->move();
+    obj2->move();
+    obj3->move();
+    obj4->move();
+    obj5->move();
+    obj6->move();
 
 
-	obj1->move();
-	obj2->move();
-	obj3->move();
-	obj4->move();
-	obj5->move();
-	obj6->move();
-
-	return 0;
+    return 0;
 
 
 }
