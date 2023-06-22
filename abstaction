@@ -19,7 +19,7 @@ public:
     string colour;
     string name;
 
-    soldier()
+    void f()
     {
         colour = "black";
         name = "soldier";
@@ -40,7 +40,7 @@ public:
     string colour;
     string name;
 
-    king()
+    void f1()
     {
         colour = "black";
         name = "king";
@@ -60,7 +60,7 @@ public:
     string colour;
     string name;
 
-    elephant()
+    void f2()
     {
         name = "elephant";
         colour = "black";
@@ -81,7 +81,7 @@ public:
     string colour;
     string name;
 
-    boat()
+    void f3()
     {
         name = "boat";
         colour = "black";
@@ -102,7 +102,7 @@ public:
     string colour;
     string name;
 
-    quenn()
+    void f4()
     {
         name = "quenn";
         colour = "black";
@@ -121,7 +121,7 @@ public:
 class horse : public figure
 {
 public:
-    
+
 
     string colour;
     string name;
@@ -131,7 +131,7 @@ public:
         cout << "horses step" << endl;
     }
 
-     horse()
+    void f5()
     {
         name = "horse";
         colour = "black";
@@ -145,8 +145,8 @@ public:
 
 int main()
 {
-   
-    
+
+
     figure* obj1 = new soldier;
     figure* obj2 = new elephant;
     figure* obj3 = new king;
@@ -161,8 +161,26 @@ int main()
     obj5->move();
     obj6->move();
 
+    soldier soldier;
+    soldier.f();
 
-   return 0;
+    king king;
+    king.f1();
+
+    elephant elephant;
+    elephant.f2();
+
+    quenn quenn;
+    quenn.f4();
+
+    boat boat;
+    boat.f3();
+
+    horse horse;
+    horse.f5();
+
+
+    return 0;
 
 
 }
