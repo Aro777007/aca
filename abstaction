@@ -9,21 +9,18 @@ class figure
 public:
 	virtual void move()
 	{
-	    
+
 	}
 	string colour;
 	string name;
-	
+
 };
 
 class soldier : public figure
 {
 public:
-	void f()
+	soldier(string name,string colour)
 	{
-		colour = "black";
-		name = "soldier";
-
 		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
 	}
 
@@ -37,11 +34,9 @@ public:
 class king : public figure
 {
 public:
-	void f1()
+	king(string name,string colour)
 	{
-		name = "king";
-		colour = " black";
-
+		
 		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
 
 	}
@@ -55,11 +50,9 @@ public:
 class elephant : public figure
 {
 public:
-	void f2()
+	elephant(string name,string colour)
 	{
-		name = "elephant";
-		colour = "black";
-
+		
 		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
 
 	}
@@ -73,11 +66,9 @@ public:
 class boat : public figure
 {
 public:
-	void f3()
+	boat(string name,string colour)
 	{
-		name = "boat";
-		colour = "black";
-
+		
 		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
 
 	}
@@ -91,11 +82,8 @@ public:
 class quenn : public figure
 {
 public:
-	void f4()
+	quenn(string name,string colour)
 	{
-		name = "quenn";
-		colour = "black";
-
 		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
 
 	}
@@ -115,15 +103,13 @@ public:
 		cout << "horses step" << endl;
 	}
 
-	void f5()
+	horse(string name,string colour)
 	{
-		name = "horse";
-		colour = "black";
-
+		
 		cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
 	}
 
-	
+
 };
 
 
@@ -131,14 +117,14 @@ int main()
 {
 	figure obj();
 	figure f;
-	
 
-	figure* obj1 = new soldier;
-	figure* obj2 = new elephant;
-	figure* obj3 = new king;
-	figure* obj4 = new quenn;
-	figure* obj5 = new boat;
-	figure* obj6 = new horse;
+	figure* obj1 = new soldier("soldier","black");
+	figure* obj2 = new elephant("elephant", "black");
+	figure* obj3 = new king("king", "black");
+	figure* obj4 = new quenn("quenn", "black");
+	figure* obj5 = new boat("boat", "black");
+	figure* obj6 = new horse("horse", "black");
+
 
 	obj1->move();
 	obj2->move();
@@ -146,27 +132,6 @@ int main()
 	obj4->move();
 	obj5->move();
 	obj6->move();
-
-
-	soldier soldier;
-	soldier.f();
-
-	king king;
-	king.f1();
-
-	elephant elephant;
-	elephant.f2();
-
-	quenn quenn;
-	quenn.f4();
-
-	boat boat;
-	boat.f3();
-
-	horse horse;
-	horse.f5();
-
-
 
 	return 0;
 
