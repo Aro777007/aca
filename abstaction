@@ -11,14 +11,14 @@ public:
     {
 
     }
-    string colour;
-    string name;
-
 };
 
 class soldier : public figure
 {
 public:
+    string colour;
+    string name;
+
     soldier()
     {
         colour = "black";
@@ -37,11 +37,13 @@ public:
 class king : public figure
 {
 public:
+    string colour;
+    string name;
+
     king()
     {
+        colour = "black";
         name = "king";
-        colour = " black";
-
         cout << "figure name is--" << name << "  " << "colour is--" << colour << endl;
 
     }
@@ -55,6 +57,9 @@ public:
 class elephant : public figure
 {
 public:
+    string colour;
+    string name;
+
     elephant()
     {
         name = "elephant";
@@ -73,6 +78,9 @@ public:
 class boat : public figure
 {
 public:
+    string colour;
+    string name;
+
     boat()
     {
         name = "boat";
@@ -91,6 +99,9 @@ public:
 class quenn : public figure
 {
 public:
+    string colour;
+    string name;
+
     quenn()
     {
         name = "quenn";
@@ -110,12 +121,17 @@ public:
 class horse : public figure
 {
 public:
+    
+
+    string colour;
+    string name;
+
     void move() final
     {
         cout << "horses step" << endl;
     }
 
-    horse()
+     horse()
     {
         name = "horse";
         colour = "black";
@@ -129,8 +145,8 @@ public:
 
 int main()
 {
+   
     
-
     figure* obj1 = new soldier;
     figure* obj2 = new elephant;
     figure* obj3 = new king;
@@ -146,7 +162,7 @@ int main()
     obj6->move();
 
 
-    return 0;
+   return 0;
 
 
 }
