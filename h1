@@ -3,16 +3,17 @@ using namespace std;
 
 class car
 {
-public:
+private:
     virtual void type() = 0;
 };
 
 class Mercedes : public car
 {
 public:
-    void type()
+    void type() override
     {
-        cout << "MERCEDES" << endl;
+        string type = "MERCEDES";
+        cout << "type = " << type;
     }
 
 };
@@ -20,12 +21,13 @@ public:
 
 class W223 : public car
 {
-    int max_speed=0;
-    int engine=0;
+    int max_speed = 0;
+    int engine = 0;
 public:
-    void type()
+    void type() final
     {
-        cout << "S CLASS 223" << endl;
+        string type = "S CLASS 223";
+        cout << type << endl;
     }
 
     W223(int max_speed, int engine)
@@ -33,8 +35,8 @@ public:
         this->max_speed = max_speed;
         this->engine = engine;
 
- 
-        cout << "max_speed =" << max_speed << "  " << "engine =" << engine;
+
+        cout << "max_speed =" << max_speed << endl << "engine =" << engine << endl;
     }
 };
 
@@ -43,14 +45,14 @@ int main()
 {
     Mercedes m;
     m.type();
-  
+
 
 
     cout << endl;
 
 
-    W223 b(250,4);
+    W223 b(250, 4);
     b.type();
-   
+
 
 }
