@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+class car
+{
+public:
+    virtual void type() = 0;
+};
+
+class Mercedes : public car
+{
+public:
+    void type()
+    {
+        cout << "MERCEDES" << endl;
+    }
+
+};
+
+
+class W223 : public car
+{
+    int max_speed=0;
+    int engine=0;
+public:
+    void type()
+    {
+        cout << "S CLASS 223" << endl;
+    }
+
+    W223(int max_speed, int engine)
+    {
+        this->max_speed = max_speed;
+        this->engine = engine;
+
+ 
+        cout << "max_speed =" << max_speed << "  " << "engine =" << engine;
+    }
+};
+
+
+int main()
+{
+    Mercedes m;
+    m.type();
+  
+
+
+    cout << endl;
+
+
+    W223 b(250,4);
+    b.type();
+   
+
+}
