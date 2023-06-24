@@ -5,8 +5,8 @@ using namespace std;
 class arrayy
 {
 private:
-    int* arr;
-    int size;
+    int* arr=nullptr;
+    int size=0;
 
 public:
     arrayy(int size)
@@ -18,10 +18,9 @@ public:
     arrayy(const arrayy& obj)
     {
         size = obj.size;
-        arr = new int[size];
     }
 
-    
+
 
     void get_element()
     {
@@ -34,7 +33,7 @@ public:
         {
             cout << arr[i];
         }
-       
+
     }
 
     ~arrayy()
@@ -45,9 +44,11 @@ public:
 
 int main()
 {
+    
     int size;
     cin >> size;
     arrayy a(size);
+    arrayy obj1 = a;
     a.get_element();
 
     return 0;
