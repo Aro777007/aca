@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+class animal
+{
+    int height;
+
+public:
+
+    animal(int h) : height(h)
+    {
+        cout << "height=" << height << endl;
+    }
+};
+
+class land : public animal
+{
+    int speed;
+
+public:
+
+    land(int s, int h) : animal(h), speed(s)
+    {
+        cout << "speed=" << speed << endl;
+    }
+};
+
+class aquatic : public animal
+{
+    int swim_speed;
+
+public:
+
+    aquatic(int swims, int h) : animal(h), swim_speed(swims)
+    {
+        cout << "swim speed=" << swim_speed << endl;
+    }
+};
+
+class frog : public land, public aquatic
+{
+    int tongue_height;
+
+public:
+
+    frog(int h, int s, int tong, int swims) : land(s, h), aquatic(swims, h), tongue_height(tong)
+    {
+        cout << "tongue height=" << tongue_height << endl;
+    }
+};
+
+int main()
+{
+    frog f(10, 25, 20, 12);
+
+    return 0;
+}
