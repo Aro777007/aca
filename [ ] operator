@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 class arrayy
@@ -21,13 +20,13 @@ public:
         arr = new int[size];
     }
 
-    int& operator[](int a)
+    int operator[](int a)
     {
-        if (a >= 0 && a < size)
+        if (a > 0 && a < size)
         {
             return arr[a];
         }
-        
+
     }
 
     void get_element()
@@ -56,7 +55,7 @@ int main()
     arrayy obj1 = a;
     a.get_element();
 
-   
+
 
     return 0;
 }
