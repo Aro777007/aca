@@ -1,0 +1,97 @@
+#include <iostream>
+using namespace std;
+
+class animal
+{
+private:
+   const int height;
+
+public:
+    animal(int& h) : height(h) {}
+
+    void f()
+    {
+        cout << height << endl;
+    }
+
+};
+
+class mammal : public animal
+{
+private:
+    const int legs;
+
+public:
+    mammal(int& h, int l) : animal(h), legs(l) {}
+
+    void f1()
+    {
+        cout << legs << endl;
+    }
+};
+
+class lion : public mammal
+{
+private:
+   const int speed;
+
+public:
+    lion(int& h, int l, int t) : mammal(h, l), speed(t) {}
+
+    void f2()
+    {
+        cout << speed << endl;
+    }
+};
+
+
+class tiger : public mammal
+{
+private:
+    int speedd;
+public:
+    tiger(int& h, int l, int s) : mammal(h, l), speedd(s){}
+    
+    void f3()
+    {
+        cout << speedd << endl;
+    }
+
+
+    bool operator<(const tiger& t)
+    {
+        return speedd < t.speedd;
+    }
+};
+
+
+
+
+int main()
+{
+    int height = 300;
+    int legs = 4;
+    int speed = 80;
+    int speedd = 60;
+
+    animal animalObj(height);
+    animalObj.f();
+
+    mammal mammalObj(height, legs);
+    mammalObj.f1();
+
+    lion lionObj(height, legs, speed);
+    lionObj.f2();
+
+    tiger tigerObj(height, legs, speedd);
+    tigerObj.f3();
+
+
+    if (speed < speedd)
+    {
+        cout << "lions speed smaller than tigers speed";
+    }
+    else
+        cout << "tigers speed smaller than lions speed";
+
+}
