@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+
+class Counter {
+private:
+    static int count;
+
+public:
+    Counter() {
+        count++;
+    }
+
+    static int getCount() {
+        return count;
+    }
+};
+
+int Counter::count = 0;
+
+class Animal {
+private:
+    const int height;
+
+public:
+    explicit Animal(int& h) : height(h) {
+        Counter c;
+    }
+
+    void f() {
+        cout << height << endl;
+    }
+};
+
+class Mammal : public Animal {
+private:
+    const int legs;
+
+public:
+    explicit Mammal(int& h, int l) : Animal(h), legs(l) {}
+
+    void f1() {
+        cout << legs << endl;
+    }
+};
+
+class Lion : public Mammal {
+private:
+    const int teeth;
+
+public:
+    explicit Lion(int& h, int l, int t) : Mammal(h, l), teeth(t) {}
+
+    void f2() {
+        cout << teeth << endl;
+    }
+};
+
+int main() {
+    int height = 300;
+    int legs = 4;
+    int teeth = 34;
+
+    Animal animalObj(height);
+    animalObj.f();
+
+    Mammal mammalObj(height, legs);
+    mammalObj.f1();
+
+    Lion lionObj(height, legs, teeth);
+    lionObj.f2();
+
+    cout << "Constructor called " << Counter::getCount() << " times." << endl;
+
+    return 0;
+}
