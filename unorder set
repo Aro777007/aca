@@ -1,0 +1,185 @@
+#include <iostream>
+#include <string>
+#include <unordered_set>
+using namespace std;
+
+template <typename T>
+class vectorr
+{
+    T* arr = nullptr;
+    int size = 0;
+    int capacity = 0;
+
+public:
+    vectorr() {}
+
+    vectorr(int size)
+    {
+        this->size = size;
+        arr = new T[size];
+        capacity = size;
+    }
+
+    vectorr(const vectorr& obj)
+    {
+        size = obj.size;
+        capacity = obj.capacity;
+        arr = new T[size];
+        for (int i = 0; i < size; ++i)
+        {
+            arr[i] = obj.arr[i];
+        }
+    }
+
+    vectorr& operator=(const vectorr& obj)
+    {
+        if (this != &obj)
+        {
+            delete[] arr;
+            size = obj.size;
+            capacity = obj.capacity;
+            arr = new T[size];
+            for (int i = 0; i < size; ++i)
+            {
+                arr[i] = obj.arr[i];
+            }
+        }
+        return *this;
+    }
+
+    vectorr(vectorr&& obj) noexcept
+    {
+        size = obj.size;
+        capacity = obj.capacity;
+        arr = obj.arr;
+        obj.size = 0;
+        obj.capacity = 0;
+        obj.arr = nullptr;
+    }
+
+    vectorr& operator=(vectorr&& obj) noexcept
+    {
+        if (this != &obj)
+        {
+            delete[] arr;
+            size = obj.size;
+            capacity = obj.capacity;
+            arr = obj.arr;
+            obj.size = 0;
+            obj.capacity = 0;
+            obj.arr = nullptr;
+        }
+        return *this;
+    }
+
+    void push_back(const T& value) noexcept
+    {
+        if (size == capacity)
+        {
+            int newCapacity = (capacity == 0) ? 1 : capacity * 2;
+            T* newarr = new T[newCapacity];
+            for (int i = 0; i < size; ++i)
+            {
+                newarr[i] = arr[i];
+            }
+            delete[] arr;
+            arr = newarr;
+            capacity = newCapacity;
+        }
+
+        arr[size] = value;
+        ++size;
+    }
+
+    void pop_back()
+    {
+        if (size > 0)
+        {
+            --size;
+        }
+    }
+
+    void insert(int index, const T& value)
+    {
+        if (index < 0 || index > size)
+        {
+            cout << "error" << endl;
+            return;
+        }
+
+        if (size == capacity)
+        {
+            int newCapacity = (capacity == 0) ? 1 : capacity * 2;
+            T* newarr = new T[newCapacity];
+            for (int i = 0; i < size; ++i)
+            {
+                newarr[i] = arr[i];
+            }
+            delete[] arr;
+            arr = newarr;
+            capacity = newCapacity;
+        }
+
+        for (int i = size; i > index; --i)
+        {
+            arr[i] = arr[i - 1];
+        }
+
+        arr[index] = value;
+        ++size;
+    }
+
+    void erase(int index)
+    {
+        if (index < 0 || index >= size)
+        {
+            cout << "error" << endl;
+            return;
+        }
+
+        for (int i = index; i < size - 1; ++i)
+        {
+            arr[i] = arr[i + 1];
+        }
+        --size;
+    }
+
+    ~vectorr()
+    {
+        delete[] arr;
+    }
+
+    void sett()
+    {
+        unordered_set<T> mySet;
+        for (int i = 0; i < size; ++i)
+        {
+            mySet.insert(arr[i]);
+        }
+        for (const auto& element : mySet)
+        {
+            for(int j=0;j<size;++j)
+            cout << element << " ";
+        }
+    }
+};
+
+int main()
+{
+    int size = 6;
+
+    vectorr<int> a(size);
+    vectorr<int> obj1 = a;
+
+    a.push_back(2);
+    a.pop_back();
+    a.insert(2, 3);
+    a.erase(1);
+    a.sett();
+
+    vectorr<int> obj = std::move(a);
+    vectorr<int> b;
+    b = std::move(vectorr<int>(2));
+
+    return 0;
+}
